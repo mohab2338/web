@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrightLine | Cybersecurity Consulting &amp; Penetration Testing in Egypt</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="BrightLine: Illuminating Cyber Defense. EDR deployment, Wazuh SIEM, email security, firewall audits, web application penetration testing, server hardening and vulnerability assessments. Remote and onsite across Egypt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f9fc;--card:#fff;--ink:#12263f;--mute:#5b6b80;--teal:#12b5a5;--indigo:#4f5bd5;--amber:#ffb23f;--line:#e3eaf2;--r:20px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:Outfit,sans-serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+.tag{display:inline-block;font:600 .8rem Outfit;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px}
+.lead{color:var(--mute);max-width:620px;font-size:1.08rem}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font:600 1rem Outfit;border:0;cursor:pointer;transition:.25s}
+.btn-p{background:linear-gradient(135deg,var(--teal),var(--indigo));color:#fff;box-shadow:0 10px 24px -8px rgba(79,91,213,.55)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 16px 30px -8px rgba(79,91,213,.6)}
+.btn-g{background:#fff;border:1.5px solid var(--line)}
+.btn-g:hover{border-color:var(--teal);transform:translateY(-3px)}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;background:rgba(246,249,252,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font:800 1.45rem Outfit}
+.logo b{color:var(--teal)}.logo svg{flex:none}
+.links{display:flex;gap:30px;align-items:center;font-weight:500;font-size:.95rem}
+.links a:not(.btn):hover{color:var(--teal)}
+.links .btn{padding:10px 22px;font-size:.92rem}
+.burger{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer}
+
+/* hero */
+.hero{padding:150px 0 90px;background:radial-gradient(900px 500px at 85% 10%,#dff6f2,transparent 60%),radial-gradient(700px 500px at 0% 90%,#e6e9ff,transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4rem);font-weight:800;margin-bottom:20px}
+.hero h1 span{background:linear-gradient(120deg,var(--teal),var(--indigo));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);font-size:1.15rem;max-width:520px;margin-bottom:32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.pills b{font:500 .85rem Inter;background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px;color:var(--mute)}
+.pills b:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--teal);margin-right:8px}
+
+/* radar */
+.radar{position:relative;aspect-ratio:1;max-width:440px;margin:auto;width:100%}
+.radar .ring{position:absolute;border-radius:50%;border:1.5px dashed #b9c8da;inset:0}
+.radar .r2{inset:15%}.radar .r3{inset:30%}
+.radar .sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(18,181,165,.38),transparent 28%);animation:spin 5s linear infinite}
+.radar .core{position:absolute;inset:38%;border-radius:28%;background:linear-gradient(135deg,var(--teal),var(--indigo));display:grid;place-items:center;box-shadow:0 20px 40px -10px rgba(79,91,213,.6);animation:float 4s ease-in-out infinite}
+.radar .core svg{width:50%;fill:#fff}
+.dot{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--amber);animation:ping 3s infinite}
+.d1{top:14%;left:62%}.d2{top:68%;left:18%;animation-delay:1s}.d3{top:76%;left:74%;animation-delay:2s;background:#ff6b6b}
+.chip{position:absolute;background:#fff;border-radius:14px;padding:10px 16px;font:600 .85rem Outfit;box-shadow:0 12px 30px -10px rgba(18,38,63,.25);animation:float 5s ease-in-out infinite}
+.c1{top:2%;left:-4%}.c2{bottom:6%;right:-6%;animation-delay:1.5s}.c3{top:44%;left:-12%;animation-delay:.7s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-12px)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,178,63,.7)}100%{box-shadow:0 0 0 22px rgba(255,178,63,0)}}
+
+/* marquee */
+.strip{background:var(--ink);color:#cfe0f3;padding:18px 0;overflow:hidden;white-space:nowrap}
+.strip div{display:inline-block;animation:slide 28s linear infinite;font:600 1.05rem Outfit;letter-spacing:.06em}
+.strip span{margin:0 34px}.strip span:after{content:"\2726";margin-left:68px;color:var(--teal)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;position:relative;overflow:hidden;transition:.3s}
+.card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--teal),var(--indigo));transform:scaleX(0);transform-origin:left;transition:.4s}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 40px -18px rgba(18,38,63,.22)}
+.card:hover:before{transform:scaleX(1)}
+.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:18px;background:#e6f8f5}
+.card:nth-child(even) .ico{background:#eceeff}
+.card h3{font-size:1.3rem;margin-bottom:8px}
+.card p{color:var(--mute);font-size:.97rem;margin-bottom:14px}
+.card ul{list-style:none;padding:0;font-size:.92rem}
+.card li{padding-left:22px;position:relative;margin:5px 0}
+.card li:before{content:"";position:absolute;left:0;top:.62em;width:10px;height:6px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+.wide{grid-column:span 2}
+.free{background:linear-gradient(145deg,#fff8ea,#fff);border-color:#ffd9a0}
+.badge{position:absolute;top:18px;right:18px;background:var(--amber);color:#4a2f00;font:700 .72rem Outfit;padding:4px 12px;border-radius:999px;letter-spacing:.06em}
+
+/* delivery */
+.deliver{background:#fff;border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.mode{border-radius:var(--r);padding:36px;color:#fff;position:relative;overflow:hidden}
+.mode.a{background:linear-gradient(135deg,#12b5a5,#0e8f9b)}
+.mode.b{background:linear-gradient(135deg,#4f5bd5,#6b49c8)}
+.mode:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12);right:-60px;bottom:-80px}
+.mode h3{font-size:1.5rem;margin-bottom:10px}.mode p{opacity:.95;max-width:420px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:50px;counter-reset:s}
+.step{padding-top:26px;border-top:3px solid var(--line);position:relative}
+.step:before{counter-increment:s;content:"0" counter(s);font:800 2.4rem Outfit;color:var(--teal);opacity:.85}
+.step h3{font-size:1.15rem;margin:6px 0}.step p{color:var(--mute);font-size:.94rem}
+
+/* contact */
+.contact{background:radial-gradient(800px 400px at 100% 0,#dff6f2,transparent 60%),var(--bg)}
+.cwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}
+.info p{margin:10px 0;color:var(--mute)}.info strong{color:var(--ink)}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px;box-shadow:0 30px 50px -30px rgba(18,38,63,.25)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font:600 .85rem Outfit;margin:14px 0 6px}
+input,select,textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font:inherit;background:#fbfdff;transition:.2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 4px rgba(18,181,165,.14)}
+textarea{min-height:110px;resize:vertical}
+form .btn{width:100%;margin-top:22px}
+.hp{position:absolute;left:-9999px}
+.ok{background:#e6f8f5;border:1px solid #9ee0d6;padding:14px 18px;border-radius:12px;margin-bottom:18px;font-weight:500}
+.err{color:#c0392b;font-size:.82rem;margin-top:4px}
+footer{background:var(--ink);color:#aebfd3;padding:36px 0;font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media(max-width:900px){
+ .hero .wrap,.two,.cwrap{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
+ .radar{max-width:340px}.c3{left:0}.c2{right:0}.c1{left:0}
+ .burger{display:block}.links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:22px;border-bottom:1px solid var(--line)}
+ .links.open{display:flex}}
+@media(max-width:600px){.grid,.steps,.row{grid-template-columns:1fr}.wide{grid-column:auto}section{padding:70px 0}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#top" class="logo"><svg viewBox="0 0 140 150" width="38" height="40" aria-hidden="true"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5ZjI1YzJiNC0wMTdiLTQ1YmUtOTg5OS0wZTk2YmY3M2UwNDYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaAJBibGKbGNYX4+ww9gZwH0AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo5YzdhZDBmYS05NjE5LTRlZjUtYjc3Ni0zN2M0MmRlNTE0NDdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoDXYnYzOcUZCb+nG0WtUXuQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgghMYEgNFMqoI24GNokxz0vZIjpEi3/HJjmQnehi/1ffikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaJZE0RoegI9CEbhsI0xOy7oAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAAwnT9FZz2uuu1/Gp7uTJDiILbfFHQA5z3ucfTXglCEmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBh9Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjlmMjVjMmI0LTAxN2ItNDViZS05ODk5LTBlOTZiZjczZTA0Ni9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmRiZDgwZjQ3LTY1NWItNDE0Ni1hNGIyLWZmMjU2NzI4YjMzZXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCExgSA0UyqgjbgY2iTHPS9kiOkSLf8cmOZCd6GL/V9+KJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg8f4fS3nNjke4U9yYjkTw/VcfyeBWV6tXKXfnidcNzbeiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg0OZbrFO1X2qBNB0lC/b5IMXCceLesnVZVC6mU/DG7HF0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQAC1JzpenW+/X1ZinAB+uMT2akUIgdxUzVwPJPk7WYznLIw4rBR/aq01dEo2VMgh7ep/1gr/CylrEYYGBBnyybE=</c2pa:manifest></metadata><defs><path id="s" d="M70 10C88 22 106 26 126 26V74C126 102 103 124 70 140C37 124 14 102 14 74V26C34 26 52 22 70 10Z"/><clipPath id="c"><use href="#s"/></clipPath>
+<linearGradient id="n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E3D63"/><stop offset="1" stop-color="#0F2038"/></linearGradient>
+<linearGradient id="l" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2FD3BF"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
+<linearGradient id="b" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#12B5A5" stop-opacity=".05"/><stop offset="1" stop-color="#12B5A5" stop-opacity=".5"/></linearGradient>
+<filter id="f" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter></defs><use href="#s" fill="url(#n)"/><g clip-path="url(#c)"><polygon points="14,140 126,30 126,140" fill="url(#b)"/></g><path d="M38 106L102 46" stroke="url(#l)" stroke-width="9" stroke-linecap="round"/><circle cx="102" cy="46" r="6.5" fill="#fff"/><use href="#s" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2"/></svg><span>Bright<b>Line</b></span></a>
+  <button class="burger" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">&#9776;</button>
+  <div class="links" onclick="this.classList.remove('open')">
+    <a href="#services">Services</a><a href="#delivery">How we deliver</a><a href="#process">Process</a>
+    <a href="#contact" class="btn btn-p">Request a service</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="tag">Cybersecurity consulting &amp; penetration testing &middot; Egypt</span>
+    <h1>Security that fits your business, <span>not the other way round.</span></h1>
+    <p>We set up endpoint protection, audit your firewalls and servers, and test your web applications, so you know where you stand before an attacker does.</p>
+    <div class="cta">
+      <a href="#contact" class="btn btn-p">Get a free assessment</a>
+      <a href="#services" class="btn btn-g">See our services</a>
+    </div>
+    <div class="pills"><b>Remote</b><b>Onsite</b><b>Clear written reports</b></div>
+  </div>
+  <div class="radar" aria-hidden="true">
+    <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+    <div class="sweep"></div>
+    <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+    <div class="core"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1 14-3-3 1.4-1.4L11 13.2l4.6-4.6L17 10l-6 6Z"/></svg></div>
+    <div class="chip c1">Endpoints protected</div>
+    <div class="chip c2">Firewall rules reviewed</div>
+    <div class="chip c3">Web app tested</div>
+  </div>
+</div></header>
+
+<div class="strip"><div>
+  
+  <span>ESET</span><span>Kaspersky</span><span>FortiGate</span><span>Sophos</span><span>Wazuh SIEM</span><span>Email Security</span><span>Windows &amp; Linux Servers</span><span>Web Applications</span>
+  
+  <span>ESET</span><span>Kaspersky</span><span>FortiGate</span><span>Sophos</span><span>Wazuh SIEM</span><span>Email Security</span><span>Windows &amp; Linux Servers</span><span>Web Applications</span>
+  
+</div></div>
+
+<section id="services"><div class="wrap">
+  <span class="tag rv">What we do</span>
+  <h2 class="rv">Seven services, each with a clear deliverable</h2>
+  <p class="lead rv">Pick one or combine them. Every engagement ends with a written report and a prioritised fix list your team can act on.</p>
+
+  <div class="grid">
+    <article class="card rv"><div class="ico">&#128737;</div>
+      <h3>EDR Consulting &amp; Deployment</h3>
+      <p>Choose, design and configure endpoint protection. We handle full deployment for ESET and Kaspersky.</p>
+      <ul><li>Product selection and sizing</li><li>Policy and exclusion tuning</li><li>Rollout to endpoints and servers</li><li>Handover and admin training</li></ul></article>
+
+    <article class="card rv"><div class="ico">&#128200;</div>
+      <h3>Wazuh SIEM Deployment &amp; Integration</h3>
+      <p>An open-source SIEM and XDR platform deployed and connected to your environment for central monitoring and alerting.</p>
+      <ul><li>Architecture and server deployment</li><li>Agent rollout on endpoints and servers</li><li>Firewall, EDR and Active Directory integration</li><li>Alert rules and dashboards</li></ul></article>
+
+    <article class="card rv"><div class="ico">&#128293;</div>
+      <h3>Firewall Audit</h3>
+      <p>Configuration review of FortiGate and Sophos firewalls against best practice.</p>
+      <ul><li>Rule base and unused rules</li><li>VPN and admin access</li><li>Firmware and hardening</li><li>Logging and segmentation</li></ul></article>
+
+    <article class="card rv"><div class="ico">&#9993;</div>
+      <h3>Email Security</h3>
+      <p>Protect your mail from phishing, spoofing and malware, and fix the settings that let them through.</p>
+      <ul><li>SPF, DKIM and DMARC setup</li><li>Anti-phishing and anti-spam policies</li><li>Mail gateway and filtering configuration</li><li>Mail platform hardening</li></ul></article>
+
+    <article class="card rv"><div class="ico">&#128375;</div>
+      <h3>Web Application Penetration Test</h3>
+      <p>Manual testing of your application the way a real attacker would approach it.</p>
+      <ul><li>OWASP Top 10 coverage</li><li>Authentication and access control</li><li>Business logic flaws</li><li>Retest after fixes</li></ul></article>
+
+    <article class="card rv"><div class="ico">&#128421;</div>
+      <h3>Server Security Audit</h3>
+      <p>Find misconfigurations and security gaps on Windows and Linux servers.</p>
+      <ul><li>Hardening baseline check</li><li>Patch and service exposure</li><li>Accounts and permissions</li><li>Backup and logging review</li></ul></article>
+
+    <article class="card free rv"><span class="badge">FREE</span><div class="ico" style="background:#fff0d4">&#128269;</div>
+      <h3>Quick Vulnerability Assessment</h3>
+      <p>A fast external check of your domain and exposed systems, at no cost and no obligation.</p>
+      <ul><li>Domain and DNS review</li><li>Exposed services and ports</li><li>Summary of key findings</li></ul>
+      <p style="margin:16px 0 0"><a href="#contact" style="color:var(--indigo);font-weight:600">Request yours &rarr;</a></p></article>
+
+    <article class="card wide rv" style="background:linear-gradient(145deg,#12263f,#1e3d63);color:#fff;border:0">
+      <h3 style="margin-top:6px">Not sure where to start?</h3>
+      <p style="color:#c5d6ea">Tell us what you run today. We will recommend the service that gives you the most protection for your budget.</p>
+      <a href="#contact" class="btn btn-p" style="margin-top:8px">Talk to us</a></article>
+  </div>
+</div></section>
+
+<section class="deliver" id="delivery"><div class="wrap">
+  <span class="tag rv">How we deliver</span>
+  <h2 class="rv">Remote or onsite, whichever suits you</h2>
+  <p class="lead rv">Most work can be done remotely, which keeps costs down. When your environment needs hands on the ground, we come to you.</p>
+  <div class="two">
+    <div class="mode a rv"><h3>Remote</h3><p>Secure remote sessions for audits, configuration, testing and support. Fast to start, no travel cost.</p></div>
+    <div class="mode b rv"><h3>Onsite</h3><p>Deployment, server room reviews and workshops at your office anywhere in Egypt.</p></div>
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <span class="tag rv">Our process</span>
+  <h2 class="rv">Simple, transparent, no surprises</h2>
+  <div class="steps">
+    <div class="step rv"><h3>Discuss</h3><p>A short call to understand your setup and goals.</p></div>
+    <div class="step rv"><h3>Scope &amp; quote</h3><p>A fixed scope and price in writing before we start.</p></div>
+    <div class="step rv"><h3>Assess</h3><p>We carry out the work and keep you updated.</p></div>
+    <div class="step rv"><h3>Report &amp; support</h3><p>Clear findings, fix guidance and a walkthrough call.</p></div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap cwrap">
+  <div class="info rv">
+    <span class="tag">Contact</span>
+    <h2>Let's talk about your security</h2>
+    <p>Fill in the form and we will reply within one business day. Your information stays confidential.</p>
+    <p><strong>Email:</strong> mohab.r.2022@gmail.com</p>
+    <p><strong>Phone:</strong> +20 000 000 0000</p>
+    <p><strong>Based in:</strong> Alexandria, Egypt</p>
+  </div>
+
+  <form id="reqform" method="POST" action="https://api.web3forms.com/submit" class="rv">
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+    <input type="hidden" name="subject" value="New service request - BrightLine website">
+    <input type="hidden" name="from_name" value="BrightLine website">
+    
+    
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" style="display:none">
+
+    <div class="row">
+      <div><label for="name">Full name *</label><input id="name" name="name" value="" required></div>
+      <div><label for="company">Company</label><input id="company" name="company" value=""></div>
+    </div>
+    <div class="row">
+      <div><label for="email">Email *</label><input id="email" type="email" name="email" value="" required></div>
+      <div><label for="phone">Contact number *</label><input id="phone" name="phone" value="" required></div>
+    </div>
+
+    <label for="service">Required service *</label>
+    <select id="service" name="service" required>
+      <option value="">Select a service</option>
+      <option>EDR consulting &amp; deployment</option>
+<option>Wazuh SIEM deployment &amp; integration</option>
+<option>Firewall audit</option>
+<option>Email security</option>
+<option>Web application penetration test</option>
+<option>Server security audit</option>
+<option>Free vulnerability assessment</option>
+<option>Not sure yet</option>
+    </select>
+    
+
+    <div class="row">
+      <div><label for="edr">EDR you have or want</label>
+        <select id="edr" name="edr">
+          <option value="">Select</option>
+          <option>ESET</option>
+<option>Kaspersky</option>
+<option>Other</option>
+<option>None yet / need advice</option>
+        </select></div>
+      <div><label for="firewall">Firewall you have</label>
+        <select id="firewall" name="firewall">
+          <option value="">Select</option>
+          <option>FortiGate</option>
+<option>Sophos</option>
+<option>Other</option>
+<option>None</option>
+        </select></div>
+    </div>
+
+    <label for="message">Anything we should know?</label>
+    <textarea id="message" name="message"></textarea>
+
+    <button class="btn btn-p" type="submit">Send request</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <span>&copy; 2026 BrightLine &middot; Illuminating Cyber Defense</span>
+  <span>Remote &amp; onsite across Egypt</span>
+</div></footer>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+</script>
+<script>
+document.getElementById('reqform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var f=e.target,b=f.querySelector('button[type=submit]');
+  b.disabled=true;b.textContent='Sending...';
+  try{
+    var r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    var j=await r.json();
+    if(j.success){location.href='thanks.html';return}
+    throw new Error('failed');
+  }catch(err){
+    b.disabled=false;b.textContent='Send request';
+    alert('Sorry, something went wrong. Please email us at mohab.r.2022@gmail.com');
+  }
+});
+</script>
+</body>
+</html>
